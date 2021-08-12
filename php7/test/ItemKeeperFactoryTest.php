@@ -13,6 +13,11 @@ use App\QualityUpdater\ConjuredItemKeeper;
 use App\QualityUpdater\LegendaryItemKeeper;
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Class ItemKeeperFactoryTest
+ * @author snowball <snow-snowball@yandex.ru>
+ * @package App
+ */
 class ItemKeeperFactoryTest extends TestCase
 {
     /**
@@ -24,7 +29,10 @@ class ItemKeeperFactoryTest extends TestCase
         $this->assertInstanceOf($keeperClass, $keeper);
     }
 
-    public function provider()
+    /**
+     * @return array[]
+     */
+    public function provider(): array
     {
         return [
             'base' => [new Item('+5 Dexterity Vest', 10, 20), BaseItemKeeper::class],

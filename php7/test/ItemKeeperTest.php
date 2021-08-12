@@ -13,12 +13,12 @@ class ItemKeeperTest extends TestCase
 {
     /**
      * @dataProvider legendaryDataProvider
-     * @param $sellIn
-     * @param $quality
-     * @param $expectedSellIn
-     * @param $expectedQuality
+     * @param int $sellIn
+     * @param int $quality
+     * @param int $expectedSellIn
+     * @param int $expectedQuality
      */
-    public function testLegendaryItemKeeper($sellIn, $quality, $expectedSellIn, $expectedQuality)
+    public function testLegendaryItemKeeper(int $sellIn, int $quality, int $expectedSellIn, int $expectedQuality)
     {
         $item = new Item('Sulfuras, Hand of Ragnaros', $sellIn, $quality);
         $keeper = ItemKeeperFactory::get($item->name);
@@ -30,12 +30,12 @@ class ItemKeeperTest extends TestCase
 
     /**
      * @dataProvider agedDataProvider
-     * @param $sellIn
-     * @param $quality
-     * @param $expectedSellIn
-     * @param $expectedQuality
+     * @param int $sellIn
+     * @param int $quality
+     * @param int $expectedSellIn
+     * @param int $expectedQuality
      */
-    public function testAgedItemKeeper($sellIn, $quality, $expectedSellIn, $expectedQuality)
+    public function testAgedItemKeeper(int $sellIn, int $quality, int $expectedSellIn, int $expectedQuality)
     {
         $item = new Item('Aged Brie', $sellIn, $quality);
         $keeper = ItemKeeperFactory::get($item->name);
@@ -47,12 +47,12 @@ class ItemKeeperTest extends TestCase
 
     /**
      * @dataProvider baseDataProvider
-     * @param $sellIn
-     * @param $quality
-     * @param $expectedSellIn
-     * @param $expectedQuality
+     * @param int $sellIn
+     * @param int $quality
+     * @param int $expectedSellIn
+     * @param int $expectedQuality
      */
-    public function testBaseItemKeeper($sellIn, $quality, $expectedSellIn, $expectedQuality)
+    public function testBaseItemKeeper(int $sellIn, int $quality, int $expectedSellIn, int $expectedQuality)
     {
         $item = new Item('+5 Dexterity Vest', $sellIn, $quality);
         $keeper = ItemKeeperFactory::get($item->name);
@@ -64,12 +64,12 @@ class ItemKeeperTest extends TestCase
 
     /**
      * @dataProvider backstageDataProvider
-     * @param $sellIn
-     * @param $quality
-     * @param $expectedSellIn
-     * @param $expectedQuality
+     * @param int $sellIn
+     * @param int $quality
+     * @param int $expectedSellIn
+     * @param int $expectedQuality
      */
-    public function testBackstageItemKeeper($sellIn, $quality, $expectedSellIn, $expectedQuality)
+    public function testBackstageItemKeeper(int $sellIn, int $quality, int $expectedSellIn, int $expectedQuality)
     {
         $item = new Item('Backstage passes to a TAFKAL80ETC concert', $sellIn, $quality);
         $keeper = ItemKeeperFactory::get($item->name);
@@ -81,12 +81,12 @@ class ItemKeeperTest extends TestCase
 
     /**
      * @dataProvider conjuredDataProvider
-     * @param $sellIn
-     * @param $quality
-     * @param $expectedSellIn
-     * @param $expectedQuality
+     * @param int $sellIn
+     * @param int $quality
+     * @param int $expectedSellIn
+     * @param int $expectedQuality
      */
-    public function testConjuredItemKeeper($sellIn, $quality, $expectedSellIn, $expectedQuality)
+    public function testConjuredItemKeeper(int $sellIn, int $quality, int $expectedSellIn, int $expectedQuality)
     {
         $item = new Item('Conjured Mana Cake', $sellIn, $quality);
         $keeper = ItemKeeperFactory::get($item->name);
@@ -96,7 +96,10 @@ class ItemKeeperTest extends TestCase
         $this->assertEquals($expectedQuality, $item->quality);
     }
 
-    public function legendaryDataProvider()
+    /**
+     * @return \int[][]
+     */
+    public function legendaryDataProvider(): array
     {
         return [
             [99, 80, 99, 80],
@@ -105,7 +108,10 @@ class ItemKeeperTest extends TestCase
         ];
     }
 
-    public function agedDataProvider()
+    /**
+     * @return \int[][]
+     */
+    public function agedDataProvider(): array
     {
         return [
             [2, 0, 1, 1],
@@ -117,7 +123,10 @@ class ItemKeeperTest extends TestCase
         ];
     }
 
-    public function baseDataProvider()
+    /**
+     * @return \int[][]
+     */
+    public function baseDataProvider(): array
     {
         return [
             [9, 19, 8, 18],
@@ -128,7 +137,10 @@ class ItemKeeperTest extends TestCase
         ];
     }
 
-    public function backstageDataProvider()
+    /**
+     * @return \int[][]
+     */
+    public function backstageDataProvider(): array
     {
         return [
             [15, 0, 14, 1],
@@ -140,7 +152,10 @@ class ItemKeeperTest extends TestCase
         ];
     }
 
-    public function conjuredDataProvider()
+    /**
+     * @return \int[][]
+     */
+    public function conjuredDataProvider(): array
     {
         return [
             [15, 0, 14, 0],

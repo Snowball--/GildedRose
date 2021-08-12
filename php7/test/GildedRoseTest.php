@@ -4,6 +4,11 @@ namespace App;
 
 use PHPUnit\Framework\TestCase;
 
+/**
+ * Class GildedRoseTest
+ * @author snowball <snow-snowball@yandex.ru>
+ * @package App
+ */
 class GildedRoseTest extends TestCase {
     public function testFoo() {
         $items      = [new Item("foo", 5, 9)];
