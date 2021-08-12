@@ -12,5 +12,5 @@ class ConjuredItemKeeper extends BaseItemKeeper
      * Объекты типа "Conjured" имеют увеличенный индекс изменения quality
      * @var int
      */
-    protected $qualityChangeIndex = 2;
+    protected int $qualityChangeIndex = 2;
 }

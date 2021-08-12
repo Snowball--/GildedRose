@@ -16,7 +16,7 @@ class LegendaryItemKeeper implements iItemKeeper
      * Значение качества легендарых вещей
      * @var int
      */
-    protected $qualityValue = 80;
+    protected int $qualityValue = 80;
 
     /**
      * Легендарный объект имеет повышенное значение качества и не портится со временем

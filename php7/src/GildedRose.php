@@ -10,9 +10,16 @@ use App\QualityUpdater\QualityUpdater;
  */
 final class GildedRose {
 
-    private $items = [];
+    /**
+     * @var array
+     */
+    private array $items = [];
 
-    public function __construct($items) {
+    /**
+     * GildedRose constructor.
+     * @param array $items
+     */
+    public function __construct(array $items) {
         $this->items = $items;
     }
 

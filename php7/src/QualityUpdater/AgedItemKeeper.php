@@ -15,5 +15,5 @@ class AgedItemKeeper extends BaseItemKeeper
      * Индекс изменения качества для "Aged" вещей
      * @var int
      */
-    protected $qualityChangeIndex = -1;
+    protected int $qualityChangeIndex = -1;
 }

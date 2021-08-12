@@ -11,7 +11,10 @@ namespace App\QualityUpdater;
  */
 class ItemKeeperFactory
 {
-    protected static $itemKeepers = [];
+    /**
+     * @var array
+     */
+    protected static array $itemKeepers = [];
 
     /**
      * ItemKeeperFactory constructor.

@@ -7,25 +7,30 @@ namespace App\QualityUpdater;
 
 use App\Item;
 
+/**
+ * Class BaseItemKeeper
+ * @author snowball <snow-snowball@yandex.ru>
+ * @package App\QualityUpdater
+ */
 class BaseItemKeeper implements iItemKeeper
 {
     /**
      * Максимально возможное значение параметра quality
      * @var int
      */
-    protected $maxQualityValue = 50;
+    protected int $maxQualityValue = 50;
 
     /**
      * Минимально возможное значение параметра quality
      * @var int
      */
-    protected $minQualityValue = 0;
+    protected int $minQualityValue = 0;
 
     /**
      * Индекс изменения параметра quality
      * @var int
      */
-    protected $qualityChangeIndex = 1;
+    protected int $qualityChangeIndex = 1;
 
     /**
      * Метод изменения данных в объекте
